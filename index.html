@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Beautiful Homes — Domestic Cleaning</title>
+<meta name="description" content="My Beautiful Homes offers reliable, friendly domestic cleaning. Message us on WhatsApp for a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine: #2F4A3E;
+    --pine-dark: #223830;
+    --putty: #EFEAE0;
+    --putty-light: #F7F4EC;
+    --charcoal: #24231F;
+    --gold: #B8873B;
+    --gold-dark: #9A6F2E;
+    --white: #FFFFFF;
+    --line: rgba(36,35,31,0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--putty);
+    color:var(--charcoal);
+    font-family:'Inter', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+    line-height:1.1;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* Focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold-dark);
+    outline-offset:3px;
+  }
+
+  /* Header */
+  header{
+    padding:22px 0;
+  }
+  header .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .brand{
+    font-family:'Fraunces', serif;
+    font-size:22px;
+    font-weight:500;
+    color:var(--pine-dark);
+  }
+  .brand span{
+    color:var(--gold-dark);
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:2px;
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary{
+    background:var(--gold);
+    color:var(--white);
+  }
+  .btn-primary:hover{
+    background:var(--gold-dark);
+  }
+  .btn-ghost{
+    background:transparent;
+    border-color:var(--pine-dark);
+    color:var(--pine-dark);
+  }
+  .btn-ghost:hover{
+    background:var(--pine-dark);
+    color:var(--white);
+  }
+  .btn-small{
+    padding:9px 16px;
+    font-size:14px;
+  }
+
+  /* Hero */
+  .hero{
+    padding:56px 0 76px;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero-eyebrow{
+    font-size:15px;
+    color:var(--pine);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(38px, 5.2vw, 58px);
+    color:var(--charcoal);
+    max-width:14ch;
+  }
+  .hero p.lead{
+    margin-top:22px;
+    font-size:18px;
+    max-width:46ch;
+    color:#454339;
+  }
+  .hero-actions{
+    margin-top:32px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .hero-art{
+    justify-self:center;
+    position:relative;
+    width:100%;
+  }
+  .hero-art::before{
+    content:"";
+    position:absolute;
+    top:22px;
+    left:-22px;
+    width:100%;
+    height:100%;
+    background:var(--gold);
+    z-index:0;
+    border-radius:4px;
+  }
+  .hero-photo{
+    position:relative;
+    z-index:1;
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    border-radius:4px;
+    border:6px solid var(--white);
+    box-shadow:0 28px 54px -18px rgba(34,56,48,0.45);
+  }
+
+  /* Photo banner */
+  .photo-banner{
+    position:relative;
+    height:220px;
+    overflow:hidden;
+  }
+  .photo-banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .photo-banner::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg, rgba(34,56,48,0.72) 0%, rgba(34,56,48,0.15) 55%, rgba(34,56,48,0) 75%);
+  }
+  .photo-banner-caption{
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    display:flex;
+    align-items:center;
+    padding-left:28px;
+    z-index:1;
+  }
+  .photo-banner-caption span{
+    font-family:'Fraunces', serif;
+    font-size:clamp(20px, 2.6vw, 28px);
+    color:var(--white);
+    max-width:12ch;
+    line-height:1.25;
+  }
+
+  /* Trust strip */
+  .trust{
+    background:var(--pine);
+    color:var(--putty-light);
+    padding:18px 0;
+  }
+  .trust .wrap{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px 36px;
+    justify-content:space-between;
+    font-size:15px;
+  }
+  .trust-item{
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .trust-item svg{width:18px;height:18px;flex-shrink:0;}
+
+  /* Section shared */
+  section{
+    padding:76px 0;
+  }
+  .section-head{
+    max-width:52ch;
+    margin-bottom:44px;
+  }
+  .section-head h2{
+    font-size:clamp(28px, 3.4vw, 36px);
+    color:var(--pine-dark);
+  }
+  .section-head p{
+    margin-top:14px;
+    font-size:17px;
+    color:#454339;
+  }
+
+  /* Services list */
+  .services-list{
+    border-top:1px solid var(--line);
+  }
+  .service-row{
+    display:grid;
+    grid-template-columns:1.4fr 2fr;
+    gap:32px;
+    padding:28px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .service-row h3{
+    font-size:22px;
+    color:var(--charcoal);
+  }
+  .service-row p{
+    margin:0;
+    color:#454339;
+    font-size:16px;
+    max-width:52ch;
+  }
+  .service-row.has-image{
+    display:flex;
+    align-items:center;
+    gap:32px;
+  }
+  .service-row.has-image.reverse{
+    flex-direction:row-reverse;
+  }
+  .service-media{
+    flex:0 0 240px;
+    display:flex;
+    gap:8px;
+  }
+  .service-media img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:2px;
+  }
+  .service-media.two-up img{
+    width:50%;
+  }
+  .service-copy{
+    flex:1;
+  }
+  .service-copy h3{
+    font-size:22px;
+    color:var(--charcoal);
+    margin-bottom:8px;
+  }
+  .service-copy p{
+    margin:0;
+    color:#454339;
+    font-size:16px;
+    max-width:52ch;
+  }
+
+  /* Why us */
+  .why{
+    background:var(--white);
+  }
+  .why .wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .why-points{
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+  }
+  .why-point{
+    display:flex;
+    gap:16px;
+  }
+  .why-point svg{
+    width:26px;height:26px;flex-shrink:0;margin-top:2px;color:var(--gold-dark);
+  }
+  .why-point h3{
+    font-size:18px;
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .why-point p{
+    margin:0;
+    color:#454339;
+    font-size:15.5px;
+  }
+  .quote-card{
+    background:var(--putty-light);
+    border-left:3px solid var(--gold);
+    padding:32px 30px;
+  }
+  .quote-card p{
+    font-family:'Fraunces', serif;
+    font-size:21px;
+    font-weight:400;
+    font-style:italic;
+    color:var(--pine-dark);
+    line-height:1.45;
+  }
+  .quote-card cite{
+    display:block;
+    margin-top:16px;
+    font-style:normal;
+    font-family:'Inter', sans-serif;
+    font-size:14px;
+    color:#5c5a4f;
+  }
+  .quote-avatar{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    overflow:hidden;
+    margin-bottom:18px;
+    border:2px solid var(--gold);
+  }
+  .quote-avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  /* Contact / CTA */
+  .cta{
+    background:var(--pine-dark);
+    color:var(--putty-light);
+  }
+  .cta .wrap{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:48px;
+    align-items:center;
+  }
+  .cta h2{
+    color:var(--white);
+    font-size:clamp(28px, 3.6vw, 38px);
+    max-width:14ch;
+  }
+  .cta p{
+    margin-top:16px;
+    color:#D9D6C9;
+    font-size:17px;
+    max-width:42ch;
+  }
+  .contact-card{
+    background:var(--pine);
+    padding:32px;
+    border-radius:2px;
+  }
+  .contact-card .btn-primary{
+    width:100%;
+    justify-content:center;
+    padding:16px 22px;
+    font-size:16px;
+  }
+  .contact-line{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:18px;
+    font-size:15.5px;
+    color:var(--putty-light);
+    text-decoration:none;
+  }
+  .contact-line svg{width:18px;height:18px;flex-shrink:0;color:var(--gold);}
+  .contact-divider{
+    border:none;
+    border-top:1px solid rgba(239,234,224,0.18);
+    margin:22px 0 0;
+  }
+
+  /* Footer */
+  footer{
+    padding:36px 0 44px;
+  }
+  .footer-inner{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:18px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .legal{
+    font-size:13px;
+    color:#6b6a5f;
+    max-width:60ch;
+    line-height:1.6;
+  }
+  .footer-brand{
+    font-family:'Fraunces', serif;
+    font-size:17px;
+    color:var(--pine-dark);
+  }
+
+  @media (max-width: 860px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-art{order:-1; max-width:220px;}
+    .why .wrap{grid-template-columns:1fr;}
+    .cta .wrap{grid-template-columns:1fr;}
+    .service-row{grid-template-columns:1fr; gap:8px;}
+    .service-row.has-image, .service-row.has-image.reverse{flex-direction:column; align-items:stretch;}
+    .service-media{flex:none;}
+    .hero-art::before{display:none;}
+    .hero-photo{height:220px;}
+    .photo-banner-caption{padding-left:20px;}
+    .trust .wrap{justify-content:flex-start;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .btn{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">My Beautiful <span>Homes</span></div>
+    <a class="btn btn-primary btn-small" href="https://wa.me/447469002843" target="_blank" rel="noopener">
+      Message on WhatsApp
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="hero-eyebrow">Domestic cleaning, done properly</div>
+      <h1>A home that feels cared for, every week.</h1>
+      <p class="lead">My Beautiful Homes brings reliable, thorough cleaning to houses across the area — the same friendly face, the same high standard, every visit.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/447469002843" target="_blank" rel="noopener">Get a free quote on WhatsApp</a>
+        <a class="btn btn-ghost" href="#services">See our services</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img class="hero-photo" src="Image/hero-mop.jpg" alt="Cleaner mopping a bright living room floor">
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg>
+      Fully insured &amp; DBS-checked cleaners
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg>
+      Same cleaner every visit
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg>
+      Flexible weekly, fortnightly or one-off
+    </div>
+  </div>
+</div>
+
+<div class="photo-banner">
+  <img src="Image/banner-products.jpg" alt="Cleaning products and cloths laid out ready for a visit">
+  <div class="photo-banner-caption"><span>Quality products, careful hands.</span></div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What we clean</h2>
+      <p>Straightforward pricing, no long contracts. Tell us what your home needs and we'll build a visit around it.</p>
+    </div>
+    <div class="services-list">
+      <div class="service-row">
+        <h3>Regular cleaning</h3>
+        <p>Weekly or fortnightly visits to keep on top of kitchens, bathrooms, floors and living spaces — so your home never has to wait for a big clean.</p>
+      </div>
+      <div class="service-row">
+        <h3>Carpet cleaning</h3>
+        <p>Deep carpet and upholstery cleaning that lifts dirt, stains and odours — refreshing rooms without the wait for a full replacement.</p>
+      </div>
+      <div class="service-row has-image">
+        <div class="service-media two-up">
+          <img src="Image/storage-before-after.jpg" alt="Wardrobe shelf before and after being organised">
+          <img src="Image/storage-organised.jpg" alt="Neatly organised wardrobe with folded clothes and shoes">
+        </div>
+        <div class="service-copy">
+          <h3>Storage organisation</h3>
+          <p>One of our specialities — we help declutter and organise cupboards, wardrobes and storage spaces so everything has a place.</p>
+        </div>
+      </div>
+      <div class="service-row has-image reverse">
+        <div class="service-media">
+          <img src="Image/ironing-service.jpg" alt="Freshly ironed shirts hanging alongside folded towels">
+        </div>
+        <div class="service-copy">
+          <h3>Ironing</h3>
+          <p>Ironing with free pickup and drop-off — hand over the basket and we'll bring it back pressed, folded and ready to put away.</p>
+        </div>
+      </div>
+      <div class="service-row has-image">
+        <div class="service-media">
+          <img src="Image/oneoff-clean.jpg" alt="Neatly folded towels and linens in a drawer">
+        </div>
+        <div class="service-copy">
+          <h3>One-off cleans</h3>
+          <p>Getting ready for guests, moving in, or just need a reset — book a single visit with no ongoing commitment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div>
+      <div class="section-head" style="margin-bottom:32px;">
+        <h2>Why homes choose us</h2>
+      </div>
+      <div class="why-points">
+        <div class="why-point">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+          <div>
+            <h3>Trusted people in your home</h3>
+            <p>Every cleaner is vetted and insured, so you can hand over a key with confidence.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div>
+            <h3>Consistent, not one-off</h3>
+            <p>The same cleaner learns your home and how you like things done — no re-explaining every visit.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 6h16M4 18h10"/></svg>
+          <div>
+            <h3>Easy to book, easy to change</h3>
+            <p>Message us on WhatsApp to set up, pause or adjust your cleaning — no call centre, no faff.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-avatar">
+        <img src="Image/illustration-cleaner.jpg" alt="">
+      </div>
+      <p>"We wanted cleaning to feel personal — like a neighbour helping out, not a faceless service. That's still how we run every visit."</p>
+      <cite>My Beautiful Homes</cite>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Let's get your home sorted.</h2>
+      <p>Send us a message with your postcode and what you need cleaned — we'll reply with a free, no-obligation quote.</p>
+    </div>
+    <div class="contact-card">
+      <a class="btn btn-primary" href="https://wa.me/447469002843" target="_blank" rel="noopener">
+        Chat on WhatsApp
+      </a>
+      <hr class="contact-divider">
+      <a class="contact-line" href="https://wa.me/447469002843" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.78.6 2.63a2 2 0 0 1-.45 2.11L8.09 9.63a16 16 0 0 0 6 6l1.17-1.17a2 2 0 0 1 2.11-.45c.85.28 1.73.48 2.63.6A2 2 0 0 1 22 16.92z"/></svg>
+        07469 002843
+      </a>
+      <a class="contact-line" href="mailto:mybeautifulhomesuk@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+        mybeautifulhomesuk@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">My Beautiful Homes</div>
+      <p class="legal">
+        My Beautiful Homes is a trading name of L&amp;L Lloyd-Owen Ltd, registered in England &amp; Wales, company number 16484855. Registered office: 2 Peter Drive, Thetford, Norfolk, IP24 2UG.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
